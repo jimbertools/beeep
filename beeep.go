@@ -3,6 +3,7 @@ package beeep
 
 import (
 	"errors"
+	"log"
 	"path/filepath"
 	"runtime"
 )
@@ -22,6 +23,6 @@ func pathAbs(path string) string {
 			abs = path
 		}
 	}
-
+	log.Println("Absolute path:", abs)
 	return abs
 }

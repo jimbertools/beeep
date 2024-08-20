@@ -7,6 +7,7 @@ import (
 	"bufio"
 	"bytes"
 	"errors"
+	"log"
 	"os/exec"
 	"strings"
 	"syscall"
@@ -42,6 +43,7 @@ func init() {
 // Notify sends desktop notification.
 func Notify(title, message, appIcon string) error {
 	if isWindows10 {
+		log.Println("Entered case: Windows 10")
 		return toastNotify(title, message, appIcon)
 	}
 
