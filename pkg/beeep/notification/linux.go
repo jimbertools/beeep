@@ -1,5 +1,5 @@
-//go:build linux || freebsd || netbsd || openbsd || illumos
-// +build linux freebsd netbsd openbsd illumos
+//go:build (linux && !nodbus) || (freebsd && !nodbus) || (netbsd && !nodbus) || (openbsd && !nodbus)
+// +build linux,!nodbus freebsd,!nodbus netbsd,!nodbus openbsd,!nodbus
 
 package notification
 
