@@ -28,3 +28,12 @@ func (notification *Notification) Show() error {
 	cmd := exec.Command(osa, "-e", script)
 	return cmd.Run()
 }
+
+func Notify(Title, Message, iconPath string) error {
+	noti, err := NewNotification(Title, Message, iconPath)
+	if err != nil {
+		return err
+	}
+
+	return noti.Show()
+}

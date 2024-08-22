@@ -44,3 +44,12 @@ func normalizedTitle(title string) string {
 
 	return title
 }
+
+func Notify(Title, Message, iconPath string) error {
+	noti, err := NewNotification(Title, Message, iconPath)
+	if err != nil {
+		return err
+	}
+
+	return noti.Show()
+}
